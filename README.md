@@ -197,4 +197,4 @@ Eduardo Carvalho
 
 ## 📄 Licença
 
-Projeto desenvolvido para fins educacionais.
+Projeto desenvolvido em âmbito de estágio
