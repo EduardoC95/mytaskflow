@@ -7,17 +7,25 @@ import { Link } from '@inertiajs/vue3';
         <div class="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.35),_transparent_38%)]">
             <header class="border-b border-[#c5ad88] bg-[#4f565f] shadow-lg">
                 <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
-                    <Link href="/tasks" class="text-3xl font-bold tracking-tight text-[#f6ead2]">
+                    <a href="/tasks" class="text-3xl font-bold tracking-tight text-[#f6ead2]">
                         MyTaskFlow
-                    </Link>
+                    </a>
 
                     <nav class="flex items-center gap-3">
-                        <Link href="/tasks" class="nav-link">Tarefas</Link>
+                        <a href="/tasks" class="nav-link">Tarefas</a>
+
                         <Link href="/clientes" class="nav-link">Clientes</Link>
                         <Link href="/fornecedores" class="nav-link">Fornecedores</Link>
                         <Link href="/contacts" class="nav-link">Contactos</Link>
                         <Link href="/articles" class="nav-link">Artigos</Link>
                     </nav>
+
+                    <a
+                        href="/tasks/create"
+                        class="rounded-xl border border-[#c8ad83] bg-[#f6ead2] px-5 py-3 text-sm font-bold text-[#3b2a1d] shadow transition hover:bg-[#fff4dc]"
+                    >
+                        Nova tarefa
+                    </a>
                 </div>
             </header>
 
