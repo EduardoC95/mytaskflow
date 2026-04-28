@@ -1,4 +1,10 @@
 <script setup>
+import AppLayout from '@/Layouts/AppLayout.vue';
+
+defineOptions({
+    layout: AppLayout,
+});
+
 defineProps({
     entity: Object,
     countries: Array,
@@ -6,24 +12,23 @@ defineProps({
 </script>
 
 <template>
-    <div class="min-h-screen bg-slate-950 p-8 text-white">
-        <h1 class="text-3xl font-bold">
-            Editar Entidade
-        </h1>
+    <section class="rounded-2xl border border-[#c5aa7c] bg-[#f6ecd6] p-8 shadow-md">
+        <h1 class="text-4xl font-bold">Editar Entidade</h1>
 
-        <p class="mt-2 text-slate-400">
-            Edição da entidade (em construção).
+        <p class="mt-3 text-lg text-[#805f3d]">
+            Edição da entidade.
         </p>
+    </section>
 
-        <div class="mt-6 p-4 bg-slate-800 rounded">
-            <p class="text-sm text-slate-300">
-                Aqui vamos permitir editar todos os dados da entidade.
-            </p>
-
-            <div class="mt-4 text-sm text-slate-400">
-                <p><strong>Nome:</strong> {{ entity.name }}</p>
-                <p><strong>NIF:</strong> {{ entity.nif }}</p>
-            </div>
+    <section class="mt-8 rounded-2xl border border-[#c5aa7c] bg-[#f6ecd6] p-8 shadow-md">
+        <div v-if="entity" class="space-y-3 text-sm text-[#6f4b2a]">
+            <p><strong>Nome:</strong> {{ entity.name }}</p>
+            <p><strong>NIF:</strong> {{ entity.nif }}</p>
+            <p><strong>Email:</strong> {{ entity.email || '-' }}</p>
         </div>
-    </div>
+
+        <p v-else class="text-sm text-[#6f4b2a]">
+            Aqui vamos permitir editar todos os dados da entidade.
+        </p>
+    </section>
 </template>

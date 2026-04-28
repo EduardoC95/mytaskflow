@@ -3,82 +3,66 @@ import { Link, usePage } from '@inertiajs/vue3';
 
 const page = usePage();
 
-const isActive = (route) => {
-    return page.url.startsWith(route);
-};
+const isActive = (route) => page.url.startsWith(route);
 </script>
 
 <template>
-    <aside class="w-64 min-h-screen bg-slate-900 text-white p-4">
-        <h1 class="text-xl font-bold mb-6">MyTaskFlow</h1>
+    <aside class="rounded-2xl border border-[#c5aa7c] bg-[#f6ecd6] p-5 shadow-md">
+        <h2 class="mb-5 text-lg font-bold text-[#3b2a1d]">Menu</h2>
 
         <nav class="space-y-2">
+            <Link href="/tasks" class="menu-link" :class="{ active: isActive('/tasks') }">
+                Tarefas
+            </Link>
 
-            <!-- CLIENTES -->
-            <Link
-                href="/clientes"
-                class="block px-4 py-2 rounded hover:bg-slate-700"
-                :class="{ 'bg-slate-700': isActive('/clientes') }"
-            >
+            <Link href="/clientes" class="menu-link" :class="{ active: isActive('/clientes') }">
                 Clientes
             </Link>
 
-            <!-- FORNECEDORES -->
-            <Link
-                href="/fornecedores"
-                class="block px-4 py-2 rounded hover:bg-slate-700"
-                :class="{ 'bg-slate-700': isActive('/fornecedores') }"
-            >
+            <Link href="/fornecedores" class="menu-link" :class="{ active: isActive('/fornecedores') }">
                 Fornecedores
             </Link>
 
-            <!-- CONTACTOS -->
-            <Link
-                href="/contacts"
-                class="block px-4 py-2 rounded hover:bg-slate-700"
-                :class="{ 'bg-slate-700': isActive('/contacts') }"
-            >
+            <Link href="/contacts" class="menu-link" :class="{ active: isActive('/contacts') }">
                 Contactos
             </Link>
 
-            <!-- ARTIGOS -->
-            <Link
-                href="/articles"
-                class="block px-4 py-2 rounded hover:bg-slate-700"
-                :class="{ 'bg-slate-700': isActive('/articles') }"
-            >
+            <Link href="/articles" class="menu-link" :class="{ active: isActive('/articles') }">
                 Artigos
             </Link>
 
-            <!-- SETTINGS -->
-            <div class="mt-6 text-xs uppercase text-slate-400">
+            <div class="pt-5 text-xs font-bold uppercase tracking-wide text-[#805f3d]">
                 Configurações
             </div>
 
-            <Link
-                href="/settings/countries"
-                class="block px-4 py-2 rounded hover:bg-slate-700"
-                :class="{ 'bg-slate-700': isActive('/settings/countries') }"
-            >
+            <Link href="/settings/countries" class="menu-link" :class="{ active: isActive('/settings/countries') }">
                 Países
             </Link>
 
-            <Link
-                href="/settings/vat-rates"
-                class="block px-4 py-2 rounded hover:bg-slate-700"
-                :class="{ 'bg-slate-700': isActive('/settings/vat-rates') }"
-            >
+            <Link href="/settings/vat-rates" class="menu-link" :class="{ active: isActive('/settings/vat-rates') }">
                 IVA
             </Link>
 
-            <Link
-                href="/settings/company"
-                class="block px-4 py-2 rounded hover:bg-slate-700"
-                :class="{ 'bg-slate-700': isActive('/settings/company') }"
-            >
+            <Link href="/settings/company" class="menu-link" :class="{ active: isActive('/settings/company') }">
                 Empresa
             </Link>
-
         </nav>
     </aside>
 </template>
+
+<style scoped>
+.menu-link {
+    display: block;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-weight: 700;
+    color: #3b2a1d;
+    transition: 0.2s ease;
+}
+
+.menu-link:hover,
+.menu-link.active {
+    background: #535c66;
+    color: #f6ead2;
+}
+</style>

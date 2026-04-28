@@ -1,4 +1,10 @@
 <script setup>
+import AppLayout from '@/Layouts/AppLayout.vue';
+
+defineOptions({
+    layout: AppLayout,
+});
+
 defineProps({
     countries: Array,
     type: String,
@@ -6,28 +12,30 @@ defineProps({
 </script>
 
 <template>
-    <div class="min-h-screen bg-slate-950 p-8 text-white">
-        <h1 class="text-3xl font-bold">
+    <section class="rounded-2xl border border-[#c5aa7c] bg-[#f6ecd6] p-8 shadow-md">
+        <h1 class="text-4xl font-bold">
             Criar {{ type === 'client' ? 'Cliente' : type === 'supplier' ? 'Fornecedor' : 'Entidade' }}
         </h1>
 
-        <p class="mt-2 text-slate-400">
-            Formulário de criação de entidade (em construção).
+        <p class="mt-3 text-lg text-[#805f3d]">
+            Formulário de criação de entidade.
+        </p>
+    </section>
+
+    <section class="mt-8 rounded-2xl border border-[#c5aa7c] bg-[#f6ecd6] p-8 shadow-md">
+        <p class="text-sm text-[#6f4b2a]">
+            Aqui vamos construir o formulário completo com NIF, nome, morada,
+            país, contactos, RGPD e estado.
         </p>
 
-        <div class="mt-6 p-4 bg-slate-800 rounded">
-            <p class="text-sm text-slate-300">
-                Aqui vamos criar o formulário completo com Shadcn Vue.
-            </p>
+        <div class="mt-6 text-sm text-[#6f4b2a]">
+            <p class="font-bold">Países disponíveis:</p>
 
-            <div class="mt-4 text-sm text-slate-400">
-                <p><strong>Países disponíveis:</strong></p>
-                <ul class="list-disc ml-5 mt-2">
-                    <li v-for="country in countries" :key="country.id">
-                        {{ country.name }}
-                    </li>
-                </ul>
-            </div>
+            <ul class="mt-2 list-disc pl-5">
+                <li v-for="country in countries" :key="country.id">
+                    {{ country.name }}
+                </li>
+            </ul>
         </div>
-    </div>
+    </section>
 </template>
