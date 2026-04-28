@@ -15,6 +15,28 @@
                     MyTaskFlow
                 </a>
 
+                <nav class="flex items-center gap-3">
+                    <a href="{{ route('tasks.index') }}" class="rounded-xl px-4 py-3 text-sm font-bold text-[#f6ead2] transition hover:bg-[#f6ead2] hover:text-[#3b2a1d]">
+                        Tarefas
+                    </a>
+
+                    <a href="{{ route('clients.index') }}" class="rounded-xl px-4 py-3 text-sm font-bold text-[#f6ead2] transition hover:bg-[#f6ead2] hover:text-[#3b2a1d]">
+                        Clientes
+                    </a>
+
+                    <a href="{{ route('suppliers.index') }}" class="rounded-xl px-4 py-3 text-sm font-bold text-[#f6ead2] transition hover:bg-[#f6ead2] hover:text-[#3b2a1d]">
+                        Fornecedores
+                    </a>
+
+                    <a href="{{ route('contacts.index') }}" class="rounded-xl px-4 py-3 text-sm font-bold text-[#f6ead2] transition hover:bg-[#f6ead2] hover:text-[#3b2a1d]">
+                        Contactos
+                    </a>
+
+                    <a href="{{ route('articles.index') }}" class="rounded-xl px-4 py-3 text-sm font-bold text-[#f6ead2] transition hover:bg-[#f6ead2] hover:text-[#3b2a1d]">
+                        Artigos
+                    </a>
+                </nav>
+
                 <a href="{{ route('tasks.create') }}"
                    class="rounded-xl border border-[#c8ad83] bg-[#f6ead2] px-5 py-3 text-sm font-bold text-[#3b2a1d] shadow transition hover:bg-[#fff4dc]">
                     Nova tarefa
